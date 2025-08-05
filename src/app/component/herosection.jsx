@@ -2,19 +2,19 @@
 import React from 'react';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
-
-
-    
-
+import { motion } from 'framer-motion';
 
 const herosection = () => {
   return (
     <section className='lg-py-16'>
         <div className="grid grid-cols-1 sm:grid-cols-12 ">
-            <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
-                <h1 className="text-white mb-4 sm:text-3xl md:text-4xl text-5xl font-extrabold lg:leading-normal">
+            <motion.div initial={{opacity:0, scale:0.5}}
+                        animate={{opacity:1, scale:1}}
+                        transition={{duration:0.5}}
+                        className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
+                <h1 className="text-white mb-4 sm:text-xl md:text-3xl text-5xl font-extrabold lg:leading-normal">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r  from-blue-200 to-blue-400">
-                        Hello,I'm <br />{" "}
+                        Hello,I'm <br/>{" "}
                     </span>
                     <TypeAnimation
                         sequence={[
@@ -41,8 +41,11 @@ const herosection = () => {
                                 Download CV
                     </button>
                 </div>
-            </div> 
-            <div className="col-span-4 place-self-center mt-4 lg:mt-0">
+            </motion.div> 
+            <motion.div initial={{opacity:0, scale:0.5}}
+                        animate={{opacity:1, scale:1}}
+                        transition={{duration:0.5}} 
+                        className="col-span-4 place-self-center mt-4 lg:mt-0">
                 <div className="rounded-full bg-gray-700 w-[350px] h-[350px] lg:w-[400px] lg:h-[400px] relative">
                     <Image 
                         src="/images/hero.png"
@@ -52,7 +55,7 @@ const herosection = () => {
                         height={500}
                     />
                 </div>
-            </div>
+            </motion.div>
         </div>
     </section>
   )
