@@ -36,7 +36,7 @@ const EmailSection = () => {
     }
 
   return (
-    <section className='grid md:grid-cols-2 my-24 md:my-12 px-4 py-8 gap-20'>
+    <section id="contact" className='grid md:grid-cols-2 my-24 md:my-12 px-4 py-8 gap-20'>
         <div>
             <h5 className='sm:text-3xl md:text-4xl text-5xl font-bold text-blue-400 mb-6'>Send Me A Message</h5>
             <form className='flex flex-col gap-4' onSubmit={handleSubmit}>

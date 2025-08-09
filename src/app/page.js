@@ -6,6 +6,7 @@ import SkillSection from "./component/SkillSection";
 import EmailSection from "./component/EmailSection";
 import ProjectSection from "./component/ProjectSection";
 import Achievements from "./component/Achievements";
+import ArticleSection from "./component/ArticleSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
           <Achievements />
           <SkillSection />
           <ProjectSection />
+          <ArticleSection />
           <AboutSection />
           <EmailSection />
           
