@@ -2,7 +2,7 @@ import React from 'react';
 
 const SkillSection = () => {
   return (
-    <section className='SkillSection px-4 py-1.58 mt-10 text-justify text-white mb-10'>
+    <section id="skills" className='SkillSection px-4 py-1.58 mt-10 text-justify text-white mb-10'>
         <div className='text-center sm:text-3xl md:text-4xl text-5xl mb-8 font-bold text-blue-400'>
             <h2>Technical Skills</h2>
         </div>

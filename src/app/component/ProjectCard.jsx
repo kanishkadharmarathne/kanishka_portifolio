@@ -4,11 +4,11 @@ import { CodeBracketIcon,EyeIcon } from '@heroicons/react/24/solid';
 
 const ProjectCard = ({ imgUrl, title, description, tags, gitUrl, previewUrl }) => {
   return (
-    <div className='border-2 border-blue-400 rounded-lg shadow-lg'>
+    <div className='border-4 border-blue-400 rounded-2xl shadow-lg'>
         <div className='h-52 md:h-72 relative group' 
              style={{backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover'}}>
 
-            <div className='overlay  items-center justify-center top-0 absolute left-0 w-full h-full bg-gray-500 bg-opacity-0 hidden group-hover:flex group-hover:opacity-80 transition-all duration-500'>
+            <div className='overlay  items-center justify-center top-0 absolute left-0 w-full h-full bg-blue-300 bg-opacity-0 hidden group-hover:flex group-hover:opacity-80 transition-all duration-500'>
                <Link href={gitUrl} className='h-14 w-14 mr-2 relative rounded-full border-white hover:border-amber-200 group/link'>
                     <CodeBracketIcon className='w-10 h-10 text-blue-800 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white' />
                </Link>
@@ -26,4 +26,4 @@ const ProjectCard = ({ imgUrl, title, description, tags, gitUrl, previewUrl }) =
   )
 }
 
-export default ProjectCard
+export default ProjectCard;

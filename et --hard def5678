@@ -1,0 +1,23 @@
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{0}: checkout: moving from anime_2 to anime_2
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{1}: checkout: moving from anime_2 to anime_2
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{2}: checkout: moving from main to anime_2
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{3}: checkout: moving from anime_2 to main
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{4}: checkout: moving from animations to anime_2
+[33m64e646e[m[33m ([m[1;31morigin/animations[m[33m, [m[1;32manimations[m[33m)[m HEAD@{5}: checkout: moving from main to animations
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{6}: checkout: moving from anime_2 to main
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{7}: checkout: moving from anime_2 to anime_2
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{8}: checkout: moving from anime_2 to anime_2
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{9}: reset: moving to HEAD~1
+[33med95c28[m HEAD@{10}: checkout: moving from main to anime_2
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{11}: checkout: moving from anime_2 to main
+[33med95c28[m HEAD@{12}: checkout: moving from main to anime_2
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{13}: checkout: moving from main to main
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{14}: checkout: moving from anime_2 to main
+[33med95c28[m HEAD@{15}: commit: add the animations and border to hero
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{16}: checkout: moving from main to anime_2
+[33m7701fc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manime_2[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{17}: pull: Fast-forward
+[33m6d38dc4[m HEAD@{18}: checkout: moving from animations to main
+[33m64e646e[m[33m ([m[1;31morigin/animations[m[33m, [m[1;32manimations[m[33m)[m HEAD@{19}: commit: update animations
+[33m6d38dc4[m HEAD@{20}: checkout: moving from main to animations
+[33m6d38dc4[m HEAD@{21}: commit: initial commit
+[33m102294b[m HEAD@{22}: commit (initial): Initial commit from Create Next App
