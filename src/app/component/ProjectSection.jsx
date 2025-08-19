@@ -25,12 +25,12 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Project Three',
-    description: 'Description for project three.',
-    image: "/images/Projects/3.jpeg",
+    title: 'Smart Traffic Management System',
+    description: 'Developed an image processing based system that detects vehicle density at junctions and dynamically adjusts traffic signal timers to reduce congestion and improve traffic flow.',
+    image: "/images/Projects/3.png",
     tags: ["All"],
-    gitUrl: "/",
-    previewUrl: "/"
+    gitUrl: "https://github.com/kanishkadharmarathne/Smart-Traffic-Management-System",
+    previewUrl: "https://github.com/kanishkadharmarathne/Smart-Traffic-Management-System"
   }
 ];
 
