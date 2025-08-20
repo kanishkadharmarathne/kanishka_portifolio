@@ -23,7 +23,7 @@ const herosection = () => {
                             1500, // wait 1s before replacing "Mice" with "Hamsters"
                             'a Software Engineer',
                             1500,
-                            'a Web Developer',
+                            'a Quality Assurance Engineer',
                             1500
                         ]}
                         wrapper="span"
@@ -36,10 +36,13 @@ const herosection = () => {
                     I excel at developing scalable, high-quality software solutions blending creativity, precision, and strong QA practices.
                 </p>
                 <div>
-                    <button type="submit"
-                            className="bg-blue-400 hover:bg-blue-300 hover:text-black text-white py-2.5 px-5 rounded-lg w-40">
-                                Download CV
-                    </button>
+                    <a
+                        href="/cv.pdf"
+                        download
+                        className="bg-blue-400 hover:bg-blue-300 hover:text-black text-white py-2.5 px-5 rounded-lg w-40 flex items-center justify-center"
+                    >
+                        Download CV
+                    </a>
                 </div>
             </motion.div> 
             <motion.div initial={{opacity:0, scale:0.5}}
