@@ -10,9 +10,9 @@ const articles = [
   },
   {
     id: 2,
-    title: "Article 2",
-    description: "Description for article 2",
-    source: "/cv.pdf"
+    title: "Ethical Implications of Artificial Intelligence",
+    description: "This research presentation explores the ethical challenges of Artificial Intelligence, including bias in algorithms, data privacy concerns, deepfakes, accountability, and global governance. It highlights real-world cases, principles of responsible AI, and the need for fairness, transparency, and human oversight to ensure trustworthy AI systems.",
+    source: "/article_2.pptx"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const articles = [
 
 const ArticleSection = () => {
   return (
-    <section id="articles">
+    <section id="articles" className='mb-12'>
       <div>
         <h2 className='text-center sm:text-3xl md:text-4xl mb-8 text-5xl font-bold text-blue-400'>
           My Articles

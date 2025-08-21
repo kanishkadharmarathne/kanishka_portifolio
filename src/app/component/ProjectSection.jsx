@@ -12,7 +12,9 @@ const projects = [
     image: "/images/Projects/1.jpeg",
     tags: ["All", "Web Development"],
     gitUrl: "/",
-    previewUrl: "/"
+    previewUrl: "/",
+    technologies: ["Python", "OpenCV"]
+
   },
   {
     id: 2,
@@ -21,7 +23,8 @@ const projects = [
     image: "/images/Projects/2.jpeg",
     tags: ["All", "Web Development"],
     gitUrl: "/",
-    previewUrl: "/"
+    previewUrl: "/",
+    technologies: ["Python", "OpenCV"]
   },
   {
     id: 3,
@@ -30,7 +33,8 @@ const projects = [
     image: "/images/Projects/3.png",
     tags: ["All"],
     gitUrl: "https://github.com/kanishkadharmarathne/Smart-Traffic-Management-System",
-    previewUrl: "https://github.com/kanishkadharmarathne/Smart-Traffic-Management-System"
+    previewUrl: "https://github.com/kanishkadharmarathne/Smart-Traffic-Management-System",
+    technologies: ["Python", "OpenCV"]
   }
 ];
 
@@ -54,7 +58,7 @@ const ProjectSection = () => {
   );
 
   return (
-    <section id="projects">
+    <section id="projects" className='mb-12'>
         <h2 className='text-center sm:text-3xl md:text-4xl mb-8 text-5xl font-bold text-blue-400'>
             My Projects
         </h2>
@@ -85,6 +89,7 @@ const ProjectSection = () => {
                   tags={project.tags}
                   gitUrl={project.gitUrl}
                   previewUrl={project.previewUrl}
+                  technologies={project.technologies}
               />
             </motion.li>
           ))}
