@@ -54,7 +54,7 @@ const ProjectSection = () => {
   );
 
   return (
-    <section id="projects">
+    <section id="projects" className='mb-12'>
         <h2 className='text-center sm:text-3xl md:text-4xl mb-8 text-5xl font-bold text-blue-400'>
             My Projects
         </h2>
