@@ -7,13 +7,13 @@ import { animate, motion, useInView } from 'framer-motion';
 const projects = [
   {
     id: 1,
-    title: 'Project One',
-    description: 'Description for project one.',
-    image: "/images/Projects/1.jpeg",
+    title: 'ClassMaster – Smart Tuition Class Management Platform',
+    description: 'A full-stack web app using React, Tailwind CSS, Express.js, JavaScript, and MySQL for managing tuition classes in Sri Lanka. Developed the Institute Admin Dashboard with navigation, routes, database integration, and core management functions. Conducted manual testing and contributed to full project documentation.',
+    image: "/images/Projects/1.png",
     tags: ["All", "Web Development"],
-    gitUrl: "/",
-    previewUrl: "/",
-    technologies: ["Python", "OpenCV"]
+    gitUrl: "https://github.com/RasanjanaHerath/Class_Management",
+    previewUrl: "https://github.com/RasanjanaHerath/Class_Management",
+    technologies: ["ReactJS", "TailwindCSS", "ExpressJS", "JavaScript", "MySQL"]
 
   },
   {
