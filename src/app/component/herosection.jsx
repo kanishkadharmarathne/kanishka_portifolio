@@ -6,13 +6,13 @@ import { motion } from 'framer-motion';
 
 const herosection = () => {
   return (
-    <section className='lg-py-16 mb-12'>
-        <div className="grid grid-cols-1 sm:grid-cols-12 ">
+    <section className='py-8 sm:py-12 md:py-16 mb-12'>
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-y-8 sm:gap-y-0 ">
             <motion.div initial={{opacity:0, scale:0.5}}
                         animate={{opacity:1, scale:1}}
                         transition={{duration:0.5}}
-                        className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
-                <h1 className="text-white mb-4 sm:text-xl md:text-3xl text-5xl font-extrabold lg:leading-normal">
+                        className="sm:col-span-8 place-self-center text-center sm:text-left justify-self-center sm:justify-self-start px-4">
+                <h1 className="text-white mb-4 text-3xl sm:text-4xl md:text-5xl font-extrabold lg:leading-normal">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r  from-blue-200 to-blue-400">
                         Hello,I'm <br/>{" "}
                     </span>
@@ -28,14 +28,15 @@ const herosection = () => {
                         ]}
                         wrapper="span"
                         speed={50}
-                        style={{ fontSize: '2em', display: 'inline-block' }}
+                        className="block text-3xl sm:text-3xl md:text-4xl lg:text-5xl"
+                        style={{display: 'inline-block' }}
                         repeat={Infinity}
                     />
                 </h1>
                 <p className="text-gray-300 text-base sm:text-lg lg:text-xl mb-6">
                     I excel at developing scalable, high-quality software solutions blending creativity, precision, and strong QA practices.
                 </p>
-                <div>
+                <div className='items-center justify-center sm:justify-start flex'>
                     <a
                         href="/cv.pdf"
                         download

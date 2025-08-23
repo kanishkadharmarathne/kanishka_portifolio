@@ -30,7 +30,7 @@ const ArticleSection = () => {
           My Articles
         </h2>
       </div>
-      <div className='grid md:grid-cols-3 gap-12 md:gap-12 bg-black p-4 rounded-2xl'>
+      <div className='grid md:grid-cols-3 gap-12 md:gap-12 p-4 rounded-2xl'>
         {articles.map(article => (
           <ArticleCard
             key={article.id}
