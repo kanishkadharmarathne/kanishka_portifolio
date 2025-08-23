@@ -56,7 +56,7 @@ const Navbar = () => {
 
             </div>
             <div className="menu hidden md:block md:w-auto" id="navbar">
-                <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8">
+                <ul className="flex p-4  md:p-0 md:flex-row md:space-x-8">
                    {
                     navlinks.map((link, index) => (
                         <li key={index}>
@@ -73,4 +73,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;
