@@ -3,7 +3,7 @@ import React from 'react';
 
 const ArticleCard = ({title, description,source}) => {
   return (
-    <div className='border-4 border-blue-400 rounded-xl shadow-lg'>
+    <div className='border-4 border-blue-400 rounded-xl shadow-lg bg-black'>
         <div className='text-white bg-black py-6 px-4 '>
             <h4 className='text-xl font-semibold mb-4 text-center'>{title}</h4>
             <p className='text-center'>{description}</p>

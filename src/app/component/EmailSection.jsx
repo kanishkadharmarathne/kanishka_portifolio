@@ -41,7 +41,7 @@ const EmailSection = () => {
             <h5 className='sm:text-3xl md:text-4xl text-5xl font-bold text-blue-400 mb-6'>Send Me A Message</h5>
             <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
                 <div className='mb-6'>
-                    <label htmlFor="email" className='text-white block mb-2 text-sm font-medium'>
+                    <label htmlFor="email" className='text-white block mb-2 text-xl font-medium'>
                         Your Email
                     </label>
                     <input type="email"
@@ -51,7 +51,7 @@ const EmailSection = () => {
                             placeholder='Enter your email address'
                             required
                     />
-                    <label htmlFor="subject" className='text-white block mb-2 text-sm font-medium'>
+                    <label htmlFor="subject" className='text-white block mb-2 text-xl font-medium'>
                         Subject
                     </label>
                     <input type="text"
@@ -64,7 +64,7 @@ const EmailSection = () => {
                 </div>
                 <div className='mb-6'>
                     <label htmlFor="message"
-                    className='text-white block mb-2 text-sm font-medium'>Message</label>
+                    className='text-white block mb-2 text-xl font-medium'>Message</label>
                     <textarea id="message"
                               name="message"
                               className='p-2 w-full h-25 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-400'
@@ -87,7 +87,7 @@ const EmailSection = () => {
         </div>
         <div>
             <h5 className='sm:text-3xl md:text-4xl text-5xl font-bold text-blue-400  mb-6'>Let's Connect...</h5>
-            <p className='text-white mb-10 w-full text-justify'>
+            <p className='text-white mb-10 w-full text-justify text-2xl'>
                 {" "}
                 I'm currently looking for new opportunities, my inbox is always open.
                 whether you have a question or just want to say hi, I'll try my best to get back to you!
