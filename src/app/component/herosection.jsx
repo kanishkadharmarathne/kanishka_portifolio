@@ -32,7 +32,7 @@ const herosection = () => {
                         repeat={Infinity}
                     />
                 </h1>
-                <p className="text-gray-400 text-base sm:text-lg lg:text-xl mb-6">
+                <p className="text-gray-300 text-base sm:text-lg lg:text-xl mb-6">
                     I excel at developing scalable, high-quality software solutions blending creativity, precision, and strong QA practices.
                 </p>
                 <div>
