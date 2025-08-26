@@ -8,82 +8,104 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const EmailSection = () => {
-    const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const data = {
-            email: e.target.email.value,
-            subject: e.target.subject.value,
-            message: e.target.message.value,
-        }
-        const JSONdata = JSON.stringify(data);
-        const endpoint = "/api/send";
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSending(true);
+    setError('');
+    setEmailSubmitted(false);
 
-            const options = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body:JSONdata,
-            }
-        const response = await fetch(endpoint,options);
-        const resData = await response.json();
-        if (response.status === 200 ){
-            console.log("Message sent.");
-            setEmailSubmitted(true);
-        }
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const res = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || 'Failed to send. Try again later.');
+      }
+      setEmailSubmitted(true);
+      form.reset();
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setSending(false);
     }
+  };
 
   return (
     <section id="contact" className='grid md:grid-cols-2 my-24 md:my-12 px-4 py-8 gap-20'>
         <div>
             <h5 className='sm:text-3xl md:text-4xl text-5xl font-bold text-blue-400 mb-6'>Send Me A Message</h5>
             <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
-                <div className='mb-6'>
-                    <label htmlFor="email" className='text-white block mb-2 text-xl font-medium'>
-                        Your Email
-                    </label>
-                    <input type="email"
-                            id="email"
-                            name="email"
-                            className='p-2 w-full rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-400'
-                            placeholder='Enter your email address'
-                            required
-                    />
-                    <label htmlFor="subject" className='text-white block mb-2 text-xl font-medium'>
-                        Subject
-                    </label>
-                    <input type="text"
-                            id="subject"
-                            name="subject"
-                            className='p-2 w-full rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-400'
-                            placeholder='Enter your subject'
-                            required
-                    />
-                </div>
-                <div className='mb-6'>
-                    <label htmlFor="message"
-                    className='text-white block mb-2 text-xl font-medium'>Message</label>
-                    <textarea id="message"
-                              name="message"
-                              className='p-2 w-full h-25 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-400'
-                              placeholder='Enter your message'
-                              required
-                    ></textarea>
-                </div>
-                <button type="submit"
-                className="bg-blue-400 hover:bg-blue-300 text-white py-2.5 px-5 rounded-lg w-full">
-                    Send Message
-                </button>
-                {
-                    emailSubmitted && (
-                        <p className='text-green-500 text-sm mt-2'>
-                            Your message has been sent successfully!
-                        </p>
-                    )
-                }
-            </form>
+      <div className='mb-6'>
+        <label htmlFor="email" className='text-white block mb-2 text-xl font-medium'>
+          Your Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          className='p-2 w-full rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-400'
+          placeholder='Enter your email address'
+          required
+        />
+
+        <label htmlFor="subject" className='text-white block mb-2 text-xl font-medium mt-4'>
+          Subject
+        </label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          className='p-2 w-full rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-400'
+          placeholder='Enter your subject'
+          required
+        />
+      </div>
+
+      <div className='mb-6'>
+        <label htmlFor="message" className='text-white block mb-2 text-xl font-medium'>Message</label>
+        <textarea
+          id="message"
+          name="message"
+          className='p-2 w-full h-25 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-400'
+          placeholder='Enter your message'
+          required
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={sending}
+        className={`bg-blue-400 hover:bg-blue-300 text-white py-2.5 px-5 rounded-lg w-full ${sending ? 'opacity-70 cursor-not-allowed' : ''}`}
+      >
+        {sending ? 'Sending…' : 'Send Message'}
+      </button>
+
+      {emailSubmitted && (
+        <p className='text-green-500 text-sm mt-2'>
+          Your message has been sent successfully!
+        </p>
+      )}
+      {!!error && (
+        <p className='text-red-500 text-sm mt-2'>
+          {error}
+        </p>
+      )}
+    </form>
         </div>
         <div>
             <h5 className='sm:text-3xl md:text-4xl text-5xl font-bold text-blue-400  mb-6'>Let's Connect...</h5>
