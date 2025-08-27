@@ -18,9 +18,9 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Project Two',
-    description: 'Description for project two.',
-    image: "/images/Projects/2.jpeg",
+    title: 'SK Electrical - E-Commerce platform(Ongoing)',
+    description: 'SK Electrical is built using modern web technologies to ensure a fast, secure, and seamless shopping experience. The platform uses Next.js for a responsive frontend, Tailwind CSS for sleek UI design, and Node.js with Express for backend operations. Payment processing and email services are integrated for a smooth user experience, while MongoDB (or your database) handles reliable data storage.',
+    image: "/images/Projects/2.png",
     tags: ["All", "Web Development"],
     gitUrl: "/",
     previewUrl: "/",
