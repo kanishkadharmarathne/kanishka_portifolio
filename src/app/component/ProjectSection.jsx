@@ -24,7 +24,7 @@ const projects = [
     tags: ["All", "Web Development"],
     gitUrl: "/",
     previewUrl: "/",
-    technologies: ["Python", "OpenCV"]
+    technologies: ["NextJS", "TailwindCSS", "NodeJS", "ThreeJS", "Brevo Email"]
   },
   {
     id: 3,
