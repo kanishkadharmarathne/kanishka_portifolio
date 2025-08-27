@@ -22,8 +22,8 @@ const projects = [
     description: 'SK Electrical is built using modern web technologies to ensure a fast, secure, and seamless shopping experience. The platform uses Next.js for a responsive frontend, Tailwind CSS for sleek UI design, and Node.js with Express for backend operations. Payment processing and email services are integrated for a smooth user experience, while MongoDB (or your database) handles reliable data storage.',
     image: "/images/Projects/2.png",
     tags: ["All", "Web Development"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/ByteSprintG/SK-CCTV",
+    previewUrl: "https://github.com/ByteSprintG/SK-CCTV",
     technologies: ["NextJS", "TailwindCSS", "NodeJS", "ThreeJS", "Brevo Email"]
   },
   {
