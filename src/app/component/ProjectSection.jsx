@@ -18,7 +18,7 @@ const projects = [
   },
   {
     id: 2,
-    title: 'SK Electrical - E-Commerce platform(Ongoing)',
+    title: 'SK Electrical - E-Commerce platform',
     description: 'SK Electrical is built using modern web technologies to ensure a fast, secure, and seamless shopping experience. The platform uses Next.js for a responsive frontend, Tailwind CSS for sleek UI design, and Node.js with Express for backend operations. Payment processing and email services are integrated for a smooth user experience, while MongoDB (or your database) handles reliable data storage.',
     image: "/images/Projects/2.png",
     tags: ["All", "Web Development"],
@@ -35,6 +35,16 @@ const projects = [
     gitUrl: "https://github.com/kanishkadharmarathne/Smart-Traffic-Management-System",
     previewUrl: "https://github.com/kanishkadharmarathne/Smart-Traffic-Management-System",
     technologies: ["Python", "OpenCV"]
+  },
+  {
+    id: 4,
+    title: 'AI Astrology Assistant',
+    description: 'Developed an AI-powered astrology assistant using Langchain, Python, and Streamlit to provide personalized astrological insights and predictions.',
+    image: "/images/Projects/4.png",
+    tags: ["AI","All"],
+    gitUrl: "https://github.com/kanishkadharmarathne/AI-powerd-Astrology-Assistant",
+    previewUrl: "https://github.com/kanishkadharmarathne/AI-powerd-Astrology-Assistant",
+    technologies: ["Langchain", "Python","Streamlit"]
   }
 ];
 
@@ -70,8 +80,13 @@ const ProjectSection = () => {
             />
             <ProjectTag
             onClick={handleTagChange}
-            name="Web Development"
+            name="Web Development" 
             isSelected={tag === "Web Development"}
+            />
+            <ProjectTag
+            onClick={handleTagChange}
+            name="AI" 
+            isSelected={tag === "AI"}
             />
         </div>
         <ul ref={ref} className='grid md:grid-cols-3 gap-12 md:gap-12'>
