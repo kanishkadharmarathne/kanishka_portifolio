@@ -9,6 +9,9 @@ const navlinks = [
     {
         title: "Home",
         path: "/",
+    },{
+        title: "Experience",
+        path: "/#experience"
     },
     {
         title: "Skills",

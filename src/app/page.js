@@ -7,6 +7,7 @@ import ProjectSection from "./component/ProjectSection";
 import Achievements from "./component/Achievements";
 import ArticleSection from "./component/ArticleSection";
 import ThreeBackground from "./component/ThreeBackground";
+import ExpSection from "./component/ExpSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Navbar />
       <div className="container mx-auto px-12 py-20 mt-10">
         <Herosection />
+        <ExpSection />
         <Achievements />
         <SkillSection />
         <ProjectSection />

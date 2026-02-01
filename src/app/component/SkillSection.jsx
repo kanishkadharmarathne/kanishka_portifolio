@@ -11,19 +11,19 @@ const SkillSection = () => {
             <span className='text-3xl font-bold text-blue-400'>
                 <h1>Frontend</h1>
             </span>
-            <p>ReactJS, NextJS, Tailwind CSS, HTML, CSS, TypeScript</p>
+            <p>Angular, ReactJS, NextJS, Tailwind CSS, HTML, CSS, TypeScript</p>
             </div>
             <div className='px-2 py-2 border-2 rounded-2xl border-blue-400 mb-4 bg-black text-xl'>
                 <span className='text-3xl font-bold text-blue-400'>
                     <h1>Backend</h1>
                 </span>
-                <p>ExpressJS, NodeJS, JavaScipt</p>
+                <p>ASP .NET, ExpressJS, NodeJS, JavaScript</p>
             </div>
             <div className='px-2 py-2 border-2 rounded-2xl border-blue-400 mb-4 bg-black text-xl'>
                 <span className='text-3xl font-bold text-blue-400'>
                     <h1>Database Management</h1>
                 </span>
-                <p>MySQL, PostgreSQL, MongoDB</p>
+                <p>Azure, MySQL, PostgreSQL, MongoDB</p>
             </div>
             <div className='px-2 py-2 border-2 rounded-2xl border-blue-400 mb-4 bg-black text-xl'>
                 <span className='text-3xl font-bold text-blue-400'>

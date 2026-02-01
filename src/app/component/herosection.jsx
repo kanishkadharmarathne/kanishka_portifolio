@@ -22,8 +22,6 @@ const herosection = () => {
                             'Kanishka Dharmarathne',
                             1500, // wait 1s before replacing "Mice" with "Hamsters"
                             'a Software Engineer',
-                            1500,
-                            'a Quality Assurance Engineer',
                             1500
                         ]}
                         wrapper="span"
@@ -38,7 +36,7 @@ const herosection = () => {
                 </p>
                 <div className='items-center justify-center sm:justify-start flex'>
                     <a
-                        href="/cv.pdf"
+                        href="/autoCV.pdf"
                         download
                         className="bg-blue-400 hover:bg-blue-300 hover:text-black text-white py-2.5 px-5 rounded-lg w-40 flex items-center justify-center"
                     >
