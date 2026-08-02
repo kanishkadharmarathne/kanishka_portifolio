@@ -6,6 +6,8 @@ import whatsappIcon from "../../../public/images/whatsapp.svg";
 import emailIcon from "../../../public/images/email.svg";
 import Link from 'next/link';
 import Image from 'next/image';
+import { FaInstagram ,FaFacebook ,FaTiktok ,FaLinkedin , FaWhatsapp ,FaGithub    } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -117,7 +119,7 @@ const EmailSection = () => {
             <div className='socials flex flex-row gap-4 '>
                 <span className='bg-blue-400 rounded-full p-2'>
                     <Link href="https://github.com/kanishkadharmarathne">
-                        <Image src={gitHubIcon} alt="Git Hub Icon" />
+                        <FaGithub  size={50} color="black" />
                     </Link>
                 </span>
                 <span className='bg-blue-400 rounded-full p-2'>
@@ -133,6 +135,21 @@ const EmailSection = () => {
                 <span className='bg-blue-400 rounded-full p-2 w-17 h-17'>
                     <Link href="mailto:kanishkadewinda1102@gmail.com">
                         <Image src={emailIcon} alt="Email Icon" />
+                    </Link>
+                </span>
+                <span className='bg-blue-400 rounded-full p-2 w-17 h-17'>
+                    <Link href="https://www.instagram.com/kanishka_dm?igsh=ZDVodG1hYWw0bm5t">
+                        <FaInstagram size={50} color="black" />
+                    </Link>
+                </span>
+                <span className='bg-blue-400 rounded-full p-2 w-17 h-17'>
+                    <Link href="https://www.facebook.com/share/1BWiT9c3K6/">
+                        <FaFacebook size={50} color="black" />
+                    </Link>
+                </span>
+                <span className='bg-blue-400 rounded-full p-2 w-17 h-17'>
+                    <Link href="https://www.tiktok.com/@kanishka.dharmarathne?_r=1&_t=ZS-98GbeYza4vw">
+                        <FaTiktok size={50} color="black" />
                     </Link>
                 </span>
             

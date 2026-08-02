@@ -7,7 +7,14 @@ const AboutSection = () => {
             <h2>About Me</h2>
             
         </div>
-        <p className='items-center sm:text-xl md:text-3xl lg:text-lg justify-center text-justify py-1 text-white'>I am a dedicated undergraduate student with a B.Sc. in Computer Science, Statistics & Mathematics in Faculty of Science, University of Peradeniya. I am actively seeking a career opportunity to achieve my career goals and utilize my extensive knowledge. With a focus on providing valuable experience, I aim to contribute effectively to a team, deliver high-quality results, and continuously develop my professional skills. I am eager to take on new challenges, grow in my role, and make a significant impact in the field of Computer Science.</p>
+        <p className='items-center sm:text-xl md:text-3xl lg:text-lg justify-center text-justify py-1 text-white'>
+            Motivated graduate with a B.Sc. (Hons) in Applied Science from the University of Peradeniya, specializing in computer science related disciplines. Currently gaining hands-on industry experience as an
+Associate Software Engineer at Emerald Clothing pvt Ltd, working with Angular, ASP.NET, cloud
+services, and workflow automation. Possesses a strong foundation in full-stack development, API testing,
+and modern web technologies, with a passion for building scalable, user-centric solutions. Eager to con-
+tribute to a dynamic team, continuously enhance technical expertise, and grow as a professional software
+engineer.
+        </p>
         <div className='px-2 py-2 text-xl'>
             <span className='text-3xl font-bold text-blue-400'>
                 <h1>Degree</h1>

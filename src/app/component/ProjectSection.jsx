@@ -7,6 +7,17 @@ import { animate, motion, useInView } from 'framer-motion';
 const projects = [
   {
     id: 1,
+    title: 'Cafe Management System',
+    description: 'This website is a modern café platform that allows customers to explore the menu, learn about the cafe story, place orders, and get in touch with the team. It also includes an admin area for managing menu items, orders, and customer messages',
+    image: "/images/Projects/5.png",
+    tags: ["All", "Web Development"],
+    gitUrl: "https://github.com/kanishkadharmarathne/Cafe",
+    previewUrl: "https://cafe-app-kane-lab.vercel.app/",
+    technologies: ["ReactJS", "Supabase"]
+
+  },
+  {
+    id: 2,
     title: 'ClassMaster – Smart Tuition Class Management Platform',
     description: 'A full-stack web app using React, Tailwind CSS, Express.js, JavaScript, and MySQL for managing tuition classes in Sri Lanka. Developed the Institute Admin Dashboard with navigation, routes, database integration, and core management functions. Conducted manual testing and contributed to full project documentation.',
     image: "/images/Projects/1.png",
@@ -17,7 +28,7 @@ const projects = [
 
   },
   {
-    id: 2,
+    id: 3,
     title: 'SK Electrical - E-Commerce platform',
     description: 'SK Electrical is built using modern web technologies to ensure a fast, secure, and seamless shopping experience. The platform uses Next.js for a responsive frontend, Tailwind CSS for sleek UI design, and Node.js with Express for backend operations. Payment processing and email services are integrated for a smooth user experience, while MongoDB (or your database) handles reliable data storage.',
     image: "/images/Projects/2.png",
@@ -27,7 +38,7 @@ const projects = [
     technologies: ["NextJS", "TailwindCSS", "NodeJS", "ThreeJS", "Brevo Email"]
   },
   {
-    id: 3,
+    id: 4,
     title: 'Smart Traffic Management System',
     description: 'Developed an image processing based system that detects vehicle density at junctions and dynamically adjusts traffic signal timers to reduce congestion and improve traffic flow.',
     image: "/images/Projects/3.png",
@@ -37,7 +48,7 @@ const projects = [
     technologies: ["Python", "OpenCV"]
   },
   {
-    id: 4,
+    id: 5,
     title: 'AI Astrology Assistant',
     description: 'Developed an AI-powered astrology assistant using Langchain, Python, and Streamlit to provide personalized astrological insights and predictions.',
     image: "/images/Projects/4.png",

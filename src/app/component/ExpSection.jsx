@@ -4,20 +4,36 @@ import ExpCard from './ExpCard';
 const experiencesData = [
     {
         id: 1,
+        type: "Probationary Internship",
+        title: "Associate Software Engineer",
+        company: "Emerald Clothing pvt Ltd",
+        timePeriod: "April 2026 – Present",
+        responsibilities: [
+            "Front-end development using Angular, including UI implementation and system integration.",
+            "Back-end development with ASP .NET Core for building scalable and secure services.",
+            "API testing and validation to ensure reliable communication between services.",
+            "Developed workflow automation solutions using Power Apps and Power Automate.",
+            "Worked with Microsoft Azure for cloud-based deployments and services.",
+            "AI integration for enhancing application functionalities and business processes."
+        ],
+        techStack: "Angular,ASP .NET Core, Power Apps, Power Automate, Microsoft Azure, LLMs, AI Integration, Power BI"
+    },
+    {
+        id: 2,
         type: "Internship",
         title: "Software Engineer Intern",
         company: "Hela Apparel Holdings PLC",
-        timePeriod: "September 2025 – Present",
+        timePeriod: "September 2025 – March 2026",
         responsibilities: [
             "Front-end development using Angular, including UI implementation and system integration.",
-            "Back-end development with .NET for building scalable and secure services.",
+            "Back-end development with ASP .NET Core for building scalable and secure services.",
             "API testing and validation to ensure reliable communication between services.",
             "Proposed and initiated the introduction of an enterprise social network (ESN) to improve internal communication.",
             "Developed workflow automation solutions using Power Apps and Power Automate.",
             "Worked with Microsoft Azure for cloud-based deployments and services."
         ],
-        techStack: "Angular, .NET, Power Apps, Power Automate, Microsoft Azure"
-    }
+        techStack: "Angular,ASP .NET Core, Power Apps, Power Automate, Microsoft Azure"
+    },
 ];
 
 const ExpSection = () => {

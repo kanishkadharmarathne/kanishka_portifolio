@@ -21,7 +21,7 @@ const herosection = () => {
                             // Same substring at the start will only be typed out once, initially
                             'Kanishka Dharmarathne',
                             1500, // wait 1s before replacing "Mice" with "Hamsters"
-                            'a Software Engineer',
+                            'a Associate Software Engineer',
                             1500
                         ]}
                         wrapper="span"
@@ -32,11 +32,11 @@ const herosection = () => {
                     />
                 </h1>
                 <p className="text-gray-300 text-base sm:text-lg lg:text-xl mb-6">
-                    I excel at developing scalable, high-quality software solutions blending creativity, precision, and strong QA practices.
+                    Passionate about transforming ideas into scalable digital solutions through clean code, innovative approaches, and continuous improvement.
                 </p>
                 <div className='items-center justify-center sm:justify-start flex'>
                     <a
-                        href="/autoCV.pdf"
+                        href="/KanishkaDharmarathne7_23_26.pdf"
                         download
                         className="bg-blue-400 hover:bg-blue-300 hover:text-black text-white py-2.5 px-5 rounded-lg w-40 flex items-center justify-center"
                     >
@@ -63,11 +63,11 @@ const herosection = () => {
                     {/* Image container with subtle border */}
                     <div className="absolute inset-4 rounded-full bg-black border-2 border-blue-400/30 overflow-hidden backdrop-blur-sm">
                         <Image 
-                            src="/images/hero3.png"
+                            src="/images/hero5.jpg"
                             alt="hero image"
-                            className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover rounded-full"
-                            width={300}
-                            height={400}
+                            className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover "
+                            width={400}
+                            height={300}
                         />
                     </div>
                     
