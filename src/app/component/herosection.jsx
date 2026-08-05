@@ -63,11 +63,12 @@ const herosection = () => {
                     {/* Image container with subtle border */}
                     <div className="absolute inset-4 rounded-full bg-black border-2 border-blue-400/30 overflow-hidden backdrop-blur-sm">
                         <Image 
-                            src="/images/hero5.jpg"
+                            src="/images/hero5.JPG"
                             alt="hero image"
                             className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover "
                             width={400}
                             height={300}
+                            priority
                         />
                     </div>
                     

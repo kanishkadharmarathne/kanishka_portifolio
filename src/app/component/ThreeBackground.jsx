@@ -6,6 +6,9 @@ export default function ThreeBackground() {
   const mountRef = useRef(null);
 
   useEffect(() => {
+    const mountNode = mountRef.current;
+    if (!mountNode) return;
+
     // === Setup Scene ===
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
@@ -18,7 +21,7 @@ export default function ThreeBackground() {
 
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    mountRef.current.appendChild(renderer.domElement);
+  mountNode.appendChild(renderer.domElement);
 
     // === Add Particles ===
     const particlesGeometry = new THREE.BufferGeometry();
@@ -43,8 +46,9 @@ export default function ThreeBackground() {
     scene.add(particlesMesh);
 
     // === Animation Loop ===
+    let animationFrameId;
     const animate = () => {
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
 
       particlesMesh.rotation.y += 0.001;
       particlesMesh.rotation.x += 0.0005;
@@ -62,8 +66,19 @@ export default function ThreeBackground() {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      mountRef.current.removeChild(renderer.domElement);
       window.removeEventListener("resize", handleResize);
+
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+
+      if (renderer.domElement.parentNode === mountNode) {
+        mountNode.removeChild(renderer.domElement);
+      }
+
+      particlesGeometry.dispose();
+      particlesMaterial.dispose();
+      renderer.dispose();
     };
   }, []);
 
