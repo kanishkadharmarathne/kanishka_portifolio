@@ -1,5 +1,7 @@
 import React from 'react';
 import ExpCard from './ExpCard';
+import SectionHeading from './SectionHeading';
+import Reveal from './Reveal';
 
 const experiencesData = [
     {
@@ -38,31 +40,37 @@ const experiencesData = [
 
 const ExpSection = () => {
     return (
-        <section
-            id="experience"
-            className='ExpSection px-4 py-16 mt-12 text-justify text-white mb-10 relative'
-        >
-            <div className='mx-auto max-w-5xl'>
-                <div className='text-center sm:text-3xl md:text-4xl text-5xl mb-10 font-bold text-blue-400'>
-                    <h2>My Experience</h2>
-                </div>
+        <section id="experience" className='py-20 md:py-24'>
+            <Reveal>
+                <SectionHeading index="01" label="experience" title="My Experience" />
+            </Reveal>
 
-                <div className='flex flex-col gap-8'>
-                    {experiencesData.map((experience) => (
-                        <ExpCard
-                            key={experience.id}
-                            type={experience.type}
-                            title={experience.title}
-                            company={experience.company}
-                            timePeriod={experience.timePeriod}
-                            responsibilities={experience.responsibilities}
-                            techStack={experience.techStack}
-                        />
-                    ))}
-                </div>
-            </div>
+            <ol className='relative'>
+                {/* Timeline rail */}
+                <span className='absolute left-[11px] top-3 bottom-3 w-px bg-linear-to-b from-accent via-accent-2/50 to-transparent' />
+
+                {experiencesData.map((experience, index) => (
+                    <li key={experience.id} className='relative pl-10 sm:pl-14 pb-10 last:pb-0'>
+                        <span className='absolute left-0 top-8 grid h-6 w-6 place-items-center rounded-full border border-accent/50 bg-night'>
+                            {index === 0 && (
+                                <span className='absolute inset-0 animate-ping rounded-full bg-accent/30' />
+                            )}
+                            <span className='h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_rgba(34,211,238,0.9)]' />
+                        </span>
+                        <Reveal delay={index * 0.1}>
+                            <ExpCard
+                                type={experience.type}
+                                title={experience.title}
+                                company={experience.company}
+                                timePeriod={experience.timePeriod}
+                                responsibilities={experience.responsibilities}
+                                techStack={experience.techStack}
+                            />
+                        </Reveal>
+                    </li>
+                ))}
+            </ol>
         </section>
-
     )
 }
 

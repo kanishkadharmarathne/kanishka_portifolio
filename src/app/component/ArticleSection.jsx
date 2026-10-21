@@ -1,5 +1,7 @@
 import React from 'react';
 import ArticleCard from './ArticleCard';
+import SectionHeading from './SectionHeading';
+import Reveal from './Reveal';
 
 const articles = [
   {
@@ -24,20 +26,19 @@ const articles = [
 
 const ArticleSection = () => {
   return (
-    <section id="articles" className='mb-12'>
-      <div>
-        <h2 className='text-center sm:text-3xl md:text-4xl mb-8 text-5xl font-bold text-blue-400'>
-          My Articles
-        </h2>
-      </div>
-      <div className='grid md:grid-cols-3 gap-12 md:gap-12 p-4 rounded-2xl'>
-        {articles.map(article => (
-          <ArticleCard
-            key={article.id}
-            title={article.title}
-            description={article.description}
-            source={article.source}
-          />
+    <section id="articles" className='py-20 md:py-24'>
+      <Reveal>
+        <SectionHeading index="04" label="articles" title="My Articles" />
+      </Reveal>
+      <div className='grid gap-6 md:grid-cols-3'>
+        {articles.map((article, index) => (
+          <Reveal key={article.id} delay={index * 0.1} className='h-full'>
+            <ArticleCard
+              title={article.title}
+              description={article.description}
+              source={article.source}
+            />
+          </Reveal>
         ))}
       </div>
     </section>

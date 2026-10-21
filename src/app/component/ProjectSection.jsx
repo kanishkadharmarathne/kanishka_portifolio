@@ -1,8 +1,9 @@
 "use client";
-import React,{useState, useRef} from 'react';
+import React,{useState} from 'react';
 import ProjectCard from './ProjectCard';
 import ProjectTag from './ProjectTag';
-import { animate, motion, useInView } from 'framer-motion';
+import SectionHeading from './SectionHeading';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -62,53 +63,47 @@ const projects = [
 const ProjectSection = () => {
   const [tag, setTag] = useState("All");
 
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  const cardVariants = {
-    initial: {y: 50, opacity: 0},
-    animate: {y: 0, opacity: 1}
-  };
-
   const handleTagChange = (newTag) => {
     setTag(newTag);
   };
 
-  const filteredProjects = projects.filter((project) => 
+  const filteredProjects = projects.filter((project) =>
     project.tags.includes(tag)
   );
 
   return (
-    <section id="projects" className='mb-12'>
-        <h2 className='text-center sm:text-3xl md:text-4xl mb-8 text-5xl font-bold text-blue-400'>
-            My Projects
-        </h2>
-        <div className='text-white flex flex-row justify-center items-center gap-4 py-2 mb-4'>
-           <ProjectTag
-            onClick={handleTagChange}
-            name="All"
-            isSelected={tag === "All"}
-            />
-            <ProjectTag
-            onClick={handleTagChange}
-            name="Web Development" 
-            isSelected={tag === "Web Development"}
-            />
-            <ProjectTag
-            onClick={handleTagChange}
-            name="AI" 
-            isSelected={tag === "AI"}
-            />
+    <section id="projects" className='py-20 md:py-24'>
+        <div className='flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-12 md:mb-16'>
+            <div className='[&>div]:mb-0'>
+                <SectionHeading index="03" label="projects" title="My Projects" />
+            </div>
+            <div className='glass inline-flex self-start md:self-auto rounded-xl p-1 gap-1'>
+               <ProjectTag
+                onClick={handleTagChange}
+                name="All"
+                isSelected={tag === "All"}
+                />
+                <ProjectTag
+                onClick={handleTagChange}
+                name="Web Development"
+                isSelected={tag === "Web Development"}
+                />
+                <ProjectTag
+                onClick={handleTagChange}
+                name="AI"
+                isSelected={tag === "AI"}
+                />
+            </div>
         </div>
-        <ul ref={ref} className='grid md:grid-cols-3 gap-12 md:gap-12'>
+        <ul className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
           {filteredProjects.map((project,index) => (
-            <motion.li key = {index}
-                      variants={cardVariants} 
-                      initial="initial" 
-                      animate={isInView ? "animate" : "initial"}
-                      transition={{duration: 0.3, delay: index * 0.4}}>
-              <ProjectCard 
-                  key={project.id}
+            <motion.li key={project.id}
+                      initial={{ y: 40, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      viewport={{ once: true, margin: "-60px" }}
+                      transition={{ duration: 0.5, delay: (index % 3) * 0.12, ease: [0.22, 1, 0.36, 1] }}>
+              <ProjectCard
+                  index={projects.indexOf(project)}
                   title={project.title}
                   description={project.description}
                   imgUrl={project.image}

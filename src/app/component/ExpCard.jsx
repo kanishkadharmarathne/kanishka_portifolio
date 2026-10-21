@@ -2,42 +2,39 @@ import React from 'react';
 
 const ExpCard = ({ type, title, company, timePeriod, responsibilities, techStack }) => {
     return (
-        <div className='relative px-6 py-10 sm:px-10 border-2 rounded-2xl border-blue-400 bg-black/95 shadow-[0_0_25px_rgba(59,130,246,0.2)]'>
-            <div className='absolute -top-3 left-8 px-4 py-1 text-xs uppercase tracking-widest text-blue-200 bg-black border border-blue-400 rounded-full'>
-                {type}
-            </div>
-
-            <div className='flex flex-col gap-6'>
+        <article className='card glass rounded-2xl p-6 sm:p-8'>
+            <div className='flex flex-col-reverse gap-4 sm:flex-row sm:items-start sm:justify-between'>
                 <div>
-                    <h3 className='text-2xl sm:text-3xl font-bold text-blue-400'>
+                    <span className='chip chip-accent uppercase tracking-widest'>{type}</span>
+                    <h3 className='mt-4 text-2xl sm:text-3xl font-semibold tracking-tight text-ink'>
                         {title}
                     </h3>
-                    <p className='text-blue-200/90 font-medium'>{company}</p>
-                    <div className='mt-2 flex flex-wrap items-center gap-3 text-blue-200/90'>
-                        <span className='inline-flex items-center gap-2 rounded-full border border-blue-400 px-3 py-1 text-xs sm:text-sm uppercase tracking-widest'>
-                            Time Period
-                        </span>
-                        <span className='text-sm sm:text-base font-semibold'>{timePeriod}</span>
-                    </div>
+                    <p className='mt-1 font-medium text-accent'>{company}</p>
                 </div>
-
-                <ul className='space-y-3 text-base leading-relaxed text-white/90'>
-                    {responsibilities.map((responsibility, index) => (
-                        <li key={index} className='flex gap-3'>
-                            <span className='mt-2 h-2 w-2 rounded-full bg-blue-400' />
-                            <span>{responsibility}</span>
-                        </li>
-                    ))}
-                </ul>
-
-                <div className='pt-4 border-t border-blue-400/30'>
-                    <p className='text-sm uppercase tracking-widest text-blue-300'>Tech Stack</p>
-                    <p className='text-base font-semibold text-blue-200'>
-                        {techStack}
-                    </p>
+                <div className='self-start shrink-0 rounded-xl border border-line bg-white/[0.02] px-4 py-2 font-mono'>
+                    <span className='block text-[10px] uppercase tracking-[0.2em] text-muted'>Time Period</span>
+                    <span className='text-sm text-ink'>{timePeriod}</span>
                 </div>
             </div>
-        </div>
+
+            <ul className='mt-6 grid gap-3 text-[15px] leading-relaxed text-ink/80'>
+                {responsibilities.map((responsibility, index) => (
+                    <li key={index} className='flex gap-3'>
+                        <span className='mt-[9px] h-1.5 w-1.5 shrink-0 rotate-45 bg-accent' />
+                        <span>{responsibility}</span>
+                    </li>
+                ))}
+            </ul>
+
+            <div className='mt-6 border-t border-line pt-5'>
+                <p className='font-mono text-[11px] uppercase tracking-[0.2em] text-muted'>Tech Stack</p>
+                <div className='mt-3 flex flex-wrap gap-2'>
+                    {techStack.split(',').map((tech) => (
+                        <span key={tech} className='chip'>{tech.trim()}</span>
+                    ))}
+                </div>
+            </div>
+        </article>
     );
 };
 

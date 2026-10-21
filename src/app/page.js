@@ -6,27 +6,27 @@ import EmailSection from "./component/EmailSection";
 import ProjectSection from "./component/ProjectSection";
 import Achievements from "./component/Achievements";
 import ArticleSection from "./component/ArticleSection";
-import ThreeBackground from "./component/ThreeBackground";
 import ExpSection from "./component/ExpSection";
+import Footer from "./component/Footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col relative font-serif">
-      {/* 3D Background */}
-      <ThreeBackground />
+    <>
+      {/* Static grid + glow backdrop */}
+      <div className="site-backdrop" aria-hidden="true" />
 
-      {/* Content */}
       <Navbar />
-      <div className="container mx-auto px-12 py-20 mt-10">
+      <main className="relative mx-auto w-full max-w-6xl px-5 sm:px-8">
         <Herosection />
-        <ExpSection />
         <Achievements />
+        <ExpSection />
         <SkillSection />
         <ProjectSection />
         <ArticleSection />
         <AboutSection />
         <EmailSection />
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }

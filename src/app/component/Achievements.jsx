@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import dynamic from 'next/dynamic';
+import Reveal from './Reveal';
 
 const AnimatedNumbers = dynamic(() => {
     return import('react-animated-numbers');
@@ -32,63 +33,30 @@ const achievements = [
 
 const Achievements = () => {
   return (
-    <>
-      {/* Mobile version - full width with border */}
-      <div className='sm:hidden py-8 px-4'>
-        <div className='border-blue-300 border rounded-md py-8 px-4 flex flex-col items-center justify-between gap-4'>
-          {achievements.map((achievement, index) => (
-            <div key={index} 
-              className='flex flex-col items-center justify-center mx-4 my-4'>
-              <h2 className='text-blue-400 text-3xl font-bold'>
-                <AnimatedNumbers 
+    <Reveal>
+      <section aria-label="Highlights" className='mb-24 md:mb-32'>
+        <div className='glass overflow-hidden rounded-2xl'>
+          <div className='grid grid-cols-2 md:grid-cols-4 gap-px bg-line'>
+            {achievements.map((achievement, index) => (
+              <div key={index} className='bg-night/85 px-6 py-8 text-center md:text-left'>
+                <p className='font-mono text-[11px] text-muted'>
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <div className='mt-2 flex items-baseline justify-center md:justify-start gap-1 text-4xl md:text-5xl font-bold text-ink'>
+                  <AnimatedNumbers
                     includeComma
                     animateToNumber={parseInt(achievement.value)}
                     locale='en-US'
-                    className='text-blue-400'
-                    congigs = {(_, index) => {
-                        return {
-                            mass: 1,
-                            friction: 100,
-                            tensions: 140 * (index + 1),
-                        };
-                    }}
-                />
-                {achievement.postfix}
-              </h2>
-              <p className='text-white text-base'>{achievement.metric}</p>
-            </div>
-          ))}
+                  />
+                  <span className='text-gradient'>{achievement.postfix}</span>
+                </div>
+                <p className='mt-2 text-sm uppercase tracking-[0.2em] text-muted'>{achievement.metric}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-
-      {/* Desktop/Tablet version - fixed position bottom right */}
-      <div className='hidden sm:block fixed bottom-4 right-4 z-50'>
-        <div className='bg-black/80 backdrop-blur-sm rounded-lg p-4 flex flex-col gap-3'>
-          {achievements.map((achievement, index) => (
-            <div key={index} 
-                className='flex flex-col items-center justify-center'>
-              <h2 className='text-blue-400 text-3xl font-bold'>
-                <AnimatedNumbers 
-                    includeComma
-                    animateToNumber={parseInt(achievement.value)}
-                    locale='en-US'
-                    className='text-blue-400'
-                    congigs = {(_, index) => {
-                        return {
-                            mass: 1,
-                            friction: 100,
-                            tensions: 140 * (index + 1),
-                        };
-                    }}
-                />
-                {achievement.postfix}
-              </h2>
-              <p className='text-white text-xl'>{achievement.metric}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </>
+      </section>
+    </Reveal>
   )
 }
 

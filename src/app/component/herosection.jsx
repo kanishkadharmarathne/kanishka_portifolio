@@ -1,88 +1,110 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
+import { ArrowDownTrayIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
+import { SiAngular, SiDotnet } from 'react-icons/si';
+import { VscAzure } from 'react-icons/vsc';
+
+const ease = [0.22, 1, 0.36, 1];
+
+const floatingChips = [
+    { label: "Angular", icon: SiAngular, className: "-left-3 top-[28%] sm:-left-10" },
+    { label: "ASP .NET Core", icon: SiDotnet, className: "-right-3 top-[48%] sm:-right-14" },
+    { label: "Azure", icon: VscAzure, className: "-left-3 bottom-[14%] sm:-left-8" },
+];
 
 const herosection = () => {
   return (
-    <section className='py-8 sm:py-12 md:py-16 mb-12'>
-        <div className="grid grid-cols-1 sm:grid-cols-12 gap-y-8 sm:gap-y-0 ">
-            <motion.div initial={{opacity:0, scale:0.5}}
-                        animate={{opacity:1, scale:1}}
-                        transition={{duration:0.5}}
-                        className="sm:col-span-8 place-self-center text-center sm:text-left justify-self-center sm:justify-self-start px-4">
-                <h1 className="text-white mb-4 text-3xl sm:text-4xl md:text-5xl font-extrabold lg:leading-normal">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r  from-blue-200 to-blue-400">
-                        Hello,I'm <br/>{" "}
-                    </span>
+    <section id="home" className='relative grid items-center gap-16 pt-32 pb-20 lg:min-h-[100svh] lg:grid-cols-12 lg:gap-8'>
+        <motion.div initial={{opacity:0, y:30}}
+                    animate={{opacity:1, y:0}}
+                    transition={{duration:0.7, ease}}
+                    className="lg:col-span-7 text-center lg:text-left">
+            <h1 className="mt-6 font-bold tracking-tight">
+                <span className="block text-2xl sm:text-3xl font-medium text-muted mb-3">
+                    Hello, I&apos;m
+                </span>
+                <span className="block min-h-[2.4em] text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.15]">
                     <TypeAnimation
                         sequence={[
                             // Same substring at the start will only be typed out once, initially
                             'Kanishka Dharmarathne',
-                            1500, // wait 1s before replacing "Mice" with "Hamsters"
-                            'a Associate Software Engineer',
+                            1500,
+                            'an Associate Software Engineer',
                             1500
                         ]}
                         wrapper="span"
                         speed={50}
-                        className="block text-3xl sm:text-3xl md:text-4xl lg:text-5xl"
-                        style={{display: 'inline-block' }}
+                        className="text-gradient"
                         repeat={Infinity}
                     />
-                </h1>
-                <p className="text-gray-300 text-base sm:text-lg lg:text-xl mb-6">
-                    Passionate about transforming ideas into scalable digital solutions through clean code, innovative approaches, and continuous improvement.
-                </p>
-                <div className='items-center justify-center sm:justify-start flex'>
-                    <a
-                        href="/KanishkaDharmarathne7_23_26.pdf"
-                        download
-                        className="bg-blue-400 hover:bg-blue-300 hover:text-black text-white py-2.5 px-5 rounded-lg w-40 flex items-center justify-center"
-                    >
-                        Download CV
-                    </a>
-                </div>
-            </motion.div> 
-            <motion.div initial={{opacity:0, scale:0.5}}
-                        animate={{opacity:1, scale:1}}
-                        transition={{duration:0.5}} 
-                        className="col-span-4 place-self-center mt-4 lg:mt-0">
-                <div className="relative w-[350px] h-[350px] lg:w-[400px] lg:h-[400px]">
-                    {/* Outer animated blur border */}
-                    {/* <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 animate-spin blur-sm opacity-75" 
-                         style={{animationDuration: '4s'}}></div> */}
-                    
-                    {/* Middle blur layer */}
-                    <div className="absolute inset-1 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-white animate-spin blur-md opacity-60" 
-                         style={{animationDuration: '6s', animationDirection: 'reverse'}}></div>
-                    
-                    {/* Inner pulsing glow */}
-                    {/* <div className="absolute inset-2 rounded-full bg-gradient-to-r from-blue-300 via-purple-400 to-blue-500 animate-pulse blur-lg opacity-40"></div> */}
+                </span>
+            </h1>
 
-                    {/* Image container with subtle border */}
-                    <div className="absolute inset-4 rounded-full bg-black border-2 border-blue-400/30 overflow-hidden backdrop-blur-sm">
-                        <Image 
-                            src="/images/hero5.JPG"
-                            alt="hero image"
-                            className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover "
-                            width={400}
-                            height={300}
-                            priority
-                        />
-                    </div>
-                    
-                    {/* Additional floating particles effect */}
-                    <div className="absolute inset-0 rounded-full">
-                        <div className="absolute top-4 left-8 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-70"></div>
-                        <div className="absolute bottom-8 right-6 w-1 h-1 bg-white rounded-full animate-ping opacity-60" 
-                             style={{animationDelay: '1s'}}></div>
-                        <div className="absolute top-12 right-12 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-ping opacity-50" 
-                             style={{animationDelay: '2s'}}></div>
-                    </div>
+            <p className="mx-auto lg:mx-0 mt-4 max-w-xl text-base sm:text-lg leading-relaxed text-muted">
+                Passionate about transforming ideas into scalable digital solutions through clean code, innovative approaches, and continuous improvement.
+            </p>
+
+            <div className='mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3'>
+                <a
+                    href="/KanishkaDharmarathne7_23_26.pdf"
+                    download
+                    className="btn btn-primary"
+                >
+                    <ArrowDownTrayIcon className="h-4 w-4" />
+                    Download CV
+                </a>
+                <Link href="/#contact" className="btn btn-ghost group">
+                    Contact Me
+                    <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+            </div>
+
+            <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-x-8 gap-y-3 font-mono text-xs text-muted">
+                <span><span className="text-accent">@</span> Faculty Of Science, University Of Perdeniya, Sri Lanka.</span>
+                <span><span className="text-accent-2">#</span> B.Sc.(Hons) Applied Science(Computer Science, Statistics, Mathematics)</span>
+            </div>
+        </motion.div>
+
+        <motion.div initial={{opacity:0, scale:0.92}}
+                    animate={{opacity:1, scale:1}}
+                    transition={{duration:0.8, delay:0.15, ease}}
+                    className="lg:col-span-5">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[400px]">
+                {/* Soft blue glow matching the sweater tone */}
+                <div className="absolute inset-x-0 bottom-0 aspect-square rounded-full bg-linear-to-tr from-blue-600/40 via-accent/20 to-accent-2/30 blur-3xl" />
+
+                {/* Circular stage with rotating ring */}
+                <div className="ring-frame absolute inset-x-0 bottom-0 aspect-square rounded-full p-[2px]">
+                    <div className="portrait-stage h-full w-full rounded-full" />
                 </div>
-            </motion.div>
-        </div>
+
+                {/* Cut-out portrait: head pops out above the ring, bottom follows the circle */}
+                <div className="portrait-mask absolute inset-0">
+                    <Image
+                        src="/images/hero-real.png"
+                        alt="Kanishka Dharmarathne"
+                        fill
+                        sizes="(max-width: 640px) 320px, (max-width: 1024px) 360px, 400px"
+                        className="object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.55)]"
+                        priority
+                    />
+                </div>
+
+                {floatingChips.map((chip) => (
+                    <div
+                        key={chip.label}
+                        className={`glass absolute z-10 ${chip.className} flex items-center gap-2 rounded-xl px-3 py-2 font-mono text-xs text-ink shadow-[0_10px_30px_-10px_rgba(0,0,0,0.8)]`}
+                    >
+                        <chip.icon className="h-4 w-4 text-accent" />
+                        {chip.label}
+                    </div>
+                ))}
+            </div>
+        </motion.div>
     </section>
   )
 }

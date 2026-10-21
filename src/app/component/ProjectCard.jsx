@@ -1,58 +1,66 @@
+"use client";
 import React,{ useState } from 'react';
 import Link from 'next/link';
-import { CodeBracketIcon,EyeIcon,CommandLineIcon } from '@heroicons/react/24/solid';
+import { CodeBracketIcon, EyeIcon } from '@heroicons/react/24/solid';
 
-const ProjectCard = ({ imgUrl, title, description, tags, gitUrl, previewUrl,technologies }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-
-
+const ProjectCard = ({ index, imgUrl, title, description, tags, gitUrl, previewUrl, technologies }) => {
+  const [expanded, setExpanded] = useState(false);
+  const categories = tags.filter((tag) => tag !== "All");
 
   return (
-    <>
-      <div className='border-4 border-blue-400 rounded-xl shadow-lg flex flex-col w-full max-w-[370px] mx-auto relative'>
-        {isModalOpen && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 z-20 rounded-xl">
-            <div className="bg-black rounded-xl shadow-lg w-80 p-6 relative border-2 border-blue-400">
-              <h2 className="text-white text-2xl font-bold mb-4">Technologies Used</h2>
-              <ul className="list-disc list-inside text-blue-400 text-xl">
-                {technologies.map((tech, index) => (
-                  <li key={index}>{tech}</li>
-                ))}
-              </ul>
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="absolute top-2 right-2 text-blue-400 hover:text-white"
-              >
-                ✖
-              </button>
-            </div>
+    <article className='card group glass flex h-full flex-col overflow-hidden rounded-2xl'>
+      <div className='relative aspect-[16/10] overflow-hidden'>
+        <div
+          className='absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105'
+          style={{ backgroundImage: `url(${imgUrl})` }}
+        />
+        <div className='absolute inset-0 bg-linear-to-t from-night via-night/20 to-transparent' />
+        <span className='absolute right-4 top-4 font-mono text-xs text-ink/70'>
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        {categories.length > 0 && (
+          <div className='absolute left-4 top-4 flex gap-2'>
+            {categories.map((category) => (
+              <span key={category} className='chip chip-accent bg-night/70 backdrop-blur'>{category}</span>
+            ))}
           </div>
         )}
-        <div className='h-52 md:h-72 relative group flex-shrink-0' 
-          style={{backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
-          <div className='overlay items-center justify-center top-0 absolute left-0 w-full h-full bg-blue-300 bg-opacity-0 hidden group-hover:flex group-hover:opacity-80 transition-all duration-500'>
-            <Link href={gitUrl} className='h-14 w-14 mr-2 relative rounded-full border-white hover:border-amber-200 group/link'>
-              <CodeBracketIcon className='w-10 h-10 text-black absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white' />
-            </Link>
-            <Link href={previewUrl} className='h-14 w-14 relative rounded-full border-white hover:border-amber-200 group/link'>
-              <EyeIcon className='w-10 h-10 text-black absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white' />
-            </Link>
-            <button type="button" onClick={() => setIsModalOpen(true)} className='h-14 w-14 relative rounded-full border-white hover:border-amber-200 group/link bg-transparent'>
-              <CommandLineIcon className='w-10 h-10 text-black absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white' />
-            </button>
+      </div>
+
+      <div className='flex flex-1 flex-col p-6'>
+        <h3 className='text-lg font-semibold leading-snug text-ink'>{title}</h3>
+        <p className={`mt-3 text-sm leading-relaxed text-muted ${expanded ? '' : 'line-clamp-3'}`}>
+          {description}
+        </p>
+        <button
+          type="button"
+          onClick={() => setExpanded(!expanded)}
+          className='mt-2 self-start font-mono text-xs text-accent hover:underline'
+        >
+          {expanded ? '− Show less' : '+ Read more'}
+        </button>
+
+        <div className='mt-5'>
+          <p className='font-mono text-[11px] uppercase tracking-[0.2em] text-muted'>Technologies Used</p>
+          <div className='mt-2 flex flex-wrap gap-2'>
+            {technologies.map((tech) => (
+              <span key={tech} className='chip'>{tech}</span>
+            ))}
           </div>
         </div>
-        <div className='flex-1 flex flex-col justify-between text-white bg-black py-6 px-4'>
-          <div>
-            <h5 className='text-xl font-semibold mb-2'>{title}</h5>
-            <div className='max-h-24 md:max-h-32 overflow-y-auto pr-1'>
-              <p className=''>{description}</p>
-            </div>
-          </div>
+
+        <div className='mt-auto flex gap-3 pt-6'>
+          <Link href={gitUrl} target="_blank" rel="noopener noreferrer" className='btn btn-ghost flex-1 !py-2.5'>
+            <CodeBracketIcon className='h-4 w-4' />
+            Code
+          </Link>
+          <Link href={previewUrl} target="_blank" rel="noopener noreferrer" className='btn btn-primary flex-1 !py-2.5'>
+            <EyeIcon className='h-4 w-4' />
+            Preview
+          </Link>
         </div>
       </div>
-    </>
+    </article>
   )
 }
 
